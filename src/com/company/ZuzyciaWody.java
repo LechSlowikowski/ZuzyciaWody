@@ -1,4 +1,5 @@
 package com.company;
+
 /********************************************************
  * nazwa klasy: ZuzyciaWody
  * atrybuty klasy:  zuzycia - tablica przechowująca zużycia
@@ -28,10 +29,10 @@ public class ZuzyciaWody {
      * wartość zwracana: miesiąc, w którym było najmniejsze zużycie wody
      * autor: 67890123456
      * ****************************************************/
-    public int znajdzMiesiacMinZuzycia(){
+    public int znajdzMiesiacMinZuzycia() {
         int miesiacMin = 0;
         for (int i = 0; i < iloscMiesiecy; i++) {
-            if(zuzycia[i] < zuzycia[miesiacMin]) {
+            if (zuzycia[i] < zuzycia[miesiacMin]) {
                 miesiacMin = i;
             }
         }
@@ -44,10 +45,10 @@ public class ZuzyciaWody {
      * wartość zwracana: miesiąc, w którym było największe zużycie wody
      * autor: 67890123456
      * ****************************************************/
-    public int znajdzMiesiacMaxZuzycia(){
+    public int znajdzMiesiacMaxZuzycia() {
         int miesiacMax = 0;
         for (int i = 0; i < iloscMiesiecy; i++) {
-            if(zuzycia[i] > zuzycia[miesiacMax]) {
+            if (zuzycia[i] > zuzycia[miesiacMax]) {
                 miesiacMax = i;
             }
         }
@@ -60,9 +61,9 @@ public class ZuzyciaWody {
      * wartość zwracana: średnie roczne zużycie wody
      * autor: 67890123456
      * ****************************************************/
-    public float obliczSrednieZuzycie(){
+    public float obliczSrednieZuzycie() {
         float suma = 0;
-        for (int i = 0; i <iloscMiesiecy ; i++) {
+        for (int i = 0; i < iloscMiesiecy; i++) {
             suma += zuzycia[i];
         }
         /*float srednia = suma / iloscMiesiecy;
@@ -77,13 +78,13 @@ public class ZuzyciaWody {
      * wartość zwracana: Oblicza koszt zużycia wody za cały rok
      * autor: 67890123456
      * ****************************************************/
-    public float obliczCene( float cena1Kw, float cenaRKw){
+    public float obliczCene(float cena1Kw, float cenaRKw) {
         float koszt1Kw = 0;
-        for (int i = 0; i < 3 ; i++) {
-            koszt1Kw +=  zuzycia[i] * cena1Kw;
+        for (int i = 0; i < 3; i++) {
+            koszt1Kw += zuzycia[i] * cena1Kw;
         }
         float kosztRKw = 0;
-        for (int i = 3; i <iloscMiesiecy ; i++) {
+        for (int i = 3; i < iloscMiesiecy; i++) {
             kosztRKw += zuzycia[i] * cenaRKw;
         }
         return koszt1Kw + kosztRKw;
